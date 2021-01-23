@@ -1,0 +1,146 @@
+sc_node_not_relation
+-> concept_oxymoron;
+-> concept_stylistic_effect;
+-> concept_artistic_speech;
+-> concept_speech_figure;
+-> concept_word;
+-> concept_adjective;
+-> concept_speech_part;
+-> concept_word_combination;
+-> concept_meaning_shade;
+-> concept_conception;;
+
+sc_node_norole_relation
+-> nrel_contradiction;
+-> nrel_synonym;
+-> nrel_value;
+-> nrel_meaning;
+-> nrel_difference;
+-> nrel_complete_match;
+-> nrel_partial_match;
+-> nrel_semantic_quality;
+-> nrel_stylistic_figure;;
+
+concept_oxymoron
+=> nrel_main_idtf: [оксюморон] (*<- lang_ru;;*); [oxymoron] (*<- lang_en;;*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: concept_oxymoron;;
+    => nrel_using_constants: ...
+    (*
+        <- sc_node_not_binary_tuple;;
+        -> nrel_contradiction;;
+        -> concept_stylistic_effect;;
+    *);;
+    => nrel_idtf: [Утв. 1 Об оксюмороне] (*<- lang_ru;;*);;
+
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: [Для оксюморона характерно намереное использование противоречия для создания стилистического эффекта] (*<- lang_ru;;*);;
+        
+    *);;
+*);;
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: concept_oxymoron;;
+    => nrel_idtf: [Опр. Оксюморон] (*<- lang_ru;;*);;
+    => nrel_using_constants: ...
+    (*
+        <- sc_node_not_binary_tuple;;
+        -> concept_conception;;
+        -> definition;;
+        -> nrel_semantic_quality;;
+        -> concept_artistic_speech
+        (*
+            -> ..sf1 (* <=> nrel_stylistic_figure: ..sf2;; *);;
+            -> ..sf2;;
+        *);;
+
+    *);;
+
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: [Оксюморон - стилистическая фигура художественной речи, сочетающая противоположные по смыслу определения или понятия, в результате чего возникает новое смысловое качество] (*<- lang_ru;;*);;
+    *);;
+*);;
+
+concept_speech_figure => nrel_inclusion: concept_oxymoron;;
+
+concept_oxymoron -> elderly_pioneer
+(*
+    <- concept_word_combination;;
+    -> elderly (*<- concept_word;;*);;
+    -> pioneer (*<- concept_word;;*);;
+*);;
+
+//////////////////////////////////////////
+
+nrel_synonym => nrel_main_idtf: [nrel_synonym] (*<- lang_en;;*); [синоним*] (*<- lang_ru;;*);;
+
+definition -> ...
+(*
+    -> rrel_key_sc_element: nrel_synonym;;
+    => nrel_using_constants: ...
+    (*
+        <- sc_node_not_binary_tuple;;
+        -> concept_meaning_shade;;
+        -> nrel_difference;;
+    *);;
+    => nrel_idtf: [Утв.1 О синониме] (*<- lang_ru;;*);;
+
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: [Каждый синоним имеет свой особый оттенок значения, отличающий его от других синонимов.] (*<- lang_ru;;*);;
+    *);;
+*);;
+
+statement -> ...
+(*
+    -> rrel_key_sc_element: nrel_synonym;;
+    => nrel_idtf: [Опр. Синоним*] (*<- lang_ru;;*);;
+    => nrel_using_constants: ...
+    (*
+        <-sc_node_not_binary_tuple;;
+        -> concept_word;;
+        -> concept_speech_part;;
+        -> nrel_meaning;;
+        -> nrel_complete_match;;
+        -> nrel_partial_match;;
+    *);;
+
+    <= nrel_sc_text_translation: ...
+    (*
+        -> rrel_example: [Синоним* — бинарное отношение, которое связывает слова одной части речи с полным или частичным совпадением значения.] (*<- lang_ru;;*);;
+    *);;
+*);;
+
+nrel_synonym => nrel_first_domain: concept_word;;
+nrel_synonym => nrel_second_domain: concept_word;;
+nrel_synonym => nrel_definitional_domain: concept_word;;
+
+arity -> ...
+(*
+    <- sc_node_not_relation;;
+    <- nrel_synonym;;
+    => nrel_measurement: 2 (*<- number;;*);;
+*);;
+
+relation => nrel_inclusion: non_oriented_relation; binary_relation
+(*
+    => nrel_inclusion: symmetric_relation; transitive_relation; reflexive_relation;;
+*);;
+
+nrel_synonym
+<- transitive_relation;
+<- symmetric_relation;
+<- reflexive_relation;
+<- non_oriented_relation;;
+
+concept_speech_part -> concept_adjective (*-> scarlet; red;;*);;
+concept_word -> scarlet; red;;
+scarlet <=> nrel_synonym: red;;
+scarlet => nrel_value: red_shape2;;
+red => nrel_value: red_shape1;;
+red_shape1 <=> nrel_mapping: red_shape2;;

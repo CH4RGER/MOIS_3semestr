@@ -1,0 +1,62 @@
+lab3_1 = [*
+nrel_generality -> ...
+	(*
+	  <- sc_node_not_binary_tuple;;
+	  -> rrel_bind_variables: _m;;
+	  -> ...
+	  	(*
+	  	  <-sc_node_not_binary_tuple;;
+	  	  <- nrel_equivalence;;
+	  	  ->[* concept_adjective _-> _m;;*];;
+	  	  -> ...
+	  	  (*
+	  	    <- sc_node_not_binary_tuple;;
+	  	    <- nrel_existence;;
+	  	    -> rrel_bind_variables: _p; _s;;
+	  	    ->[*concept_notional_part_of_speech _-> _m;;*];;
+	  	    ->[*_m _=>nrel_showing:_p;;
+	  	       concept_thing->_s;;
+	  	       _s _=> nrel_feature:_p;;
+	  	       *];;
+	  	  *);;
+	  	*);;
+	*);;
+*];;
+
+lab3_2 = [*
+nrel_generality -> ...
+	(*
+	  <- sc_node_not_binary_tuple;;
+	  -> rrel_bind_variables: _s; _sen;;
+	  -> ...
+	  (*
+	  <-sc_node_not_binary_tuple;;
+	  <- nrel_equivalence;;
+	  ->[*
+	     _s _<=nrel_subject:_sen;;
+	    *];;
+	  ->...
+	   (*
+	    <- sc_node_not_binary_tuple;;
+	    <- nrel_conjunction;;
+	    ->[*
+	      cocnept_word->_s;;
+	      concept_sentence->_sen;;
+	      *];;
+	    ->...
+	     (*
+	      <-nrel_disjunction;;
+	      <-sc_node_not_binary_tuple;;
+	      ->[*_sen _=>nrel_subject:_s*;;
+	      _s _<-concept_feature;;];;
+	      ->[*_sen _=>nrel_subject:_s*;;
+	      _s _<-concept_thing;;];;
+	      ->[*_sen _=>nrel_subject:_s*;;
+	      _s _<-concept_phenomenon;;];;
+	      ->[*_sen _=>nrel_subject:_s*;;
+	      _s _<-concept_act;;];;
+	     *);;
+	   *);;
+	  *);;
+	*);;
+*];;

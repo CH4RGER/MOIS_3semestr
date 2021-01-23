@@ -1,0 +1,64 @@
+sc_node_not_relation
+-> concept_rectangle;
+-> concept_segment;
+-> concept_parallelogram;
+-> concept_length;
+-> concept_square;
+-> concept_exact_value;
+-> concept_angle;;
+
+sc_node_norole_relation
+-> nrel_side;
+-> nrel_obtuse_angle;
+-> nrel_multiplication;;
+
+concept_rectangle -> ABCD 
+(*
+    => nrel_side: AB; CD;;
+*);;
+
+concept_segment -> AB; ST; CD; PM;;
+
+concept_parallelogram -> STMP
+(*
+    => nrel_side: ST; PM;; 
+    => nrel_obtuse_angle: TSM;;
+*);;
+
+required_value -> value (*-> TSM;;*);;
+concept_angle -> TSM;;
+
+concept_length -> ... 
+(*
+    <- sc_node_not_relation;;
+    -> AB; ST;;
+*);
+-> ... 
+(*
+    <- sc_node_not_relation;;
+    -> CD; PM;;
+*);;
+
+concept_square -> ..sq1
+(*
+    <- concept_exact_value;;
+    <- sc_node_not_relation;;
+    -> STMP;;
+*);
+
+..sq2
+(*
+    <- sc_node_not_relation;;
+    -> ABCD;;
+    <- concept_exact_value;;
+*);;
+
+number -> 2
+(*
+    <- ...
+    (*
+        <- sc_node_not_binary_tuple;;
+        -> ..sq1;;
+        => nrel_multiplication: ..sq2;;
+    *);;
+*);;

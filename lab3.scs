@@ -1,0 +1,92 @@
+nrel_generality -> ...
+(*
+	<- sc_node_not_binary_tuple;;
+	-> rrel_bind_variables: _final_state_machine (*<- atomic_logical_formula;;*);;
+	-> ...
+	(*
+		<- sc_node_not_binary_tuple;;
+		<- nrel_equivalence;;
+		->
+		[*
+			concept_final_state_machine _-> _final_state_machine;;
+		*] (*<- atomic_logical_formula;;*);;
+
+		-> ...
+		(*
+			<- sc_node_not_binary_tuple;;
+			<- nrel_existence;;
+			-> rrel_bind_variables:
+				_A;
+				_B;
+				_final_output_alphabet;
+				_final_input_alphabet;;
+
+			->
+			[*
+				concept_discrete_model _-> _final_state_machine;;
+				concept_math_abstraction _-> _final_state_machine
+				(*
+					_=> nrel_output:: _final_output_alphabet;;
+					_=> nrel_output_functions:: _B;;
+					_=> nrel_transition_functions:: _A;;
+					_=> nrel_input:: _final_input_alphabet;;
+				*);;
+				concept_final_input_alphabet _-> _final_input_alphabet;;
+				concept_final_output_alphabet _-> _final_output_alphabet;;
+				concept_functions _-> _B;;
+				concept_functions _-> _A;;
+			*] (*<- atomic_logical_formula;;*);;
+
+		*);;
+
+	*);;
+*);;
+
+
+nrel_generality -> ...
+(*
+	<- sc_node_not_binary_tuple;;
+	-> rrel_bind_variables: 
+		_final_state_machine;
+		_a;
+		_symbol;;
+
+	-> ...
+	(*
+		<- sc_node_not_binary_tuple;;
+		<- nrel_equivalence;;
+		->
+		[*
+			_final_state_machine _=> nrel_alphabet:: _a;;
+		*] (*<- atomic_logical_formula;;*);;
+
+		
+		->
+		[*
+			concept_final_state_machine _-> _final_state_machine;;
+			concept_alphabet _-> _a;;
+			_final_state_machine _=> nrel_input:: _symbol;;
+			_final_state_machine _=> nrel_output:: _symbol;;
+			_a _-> _symbol;;
+		*] (*<- atomic_logical_formula;;*);;
+		
+	*);;
+*);;
+
+sc_node_norole_relation
+-> concept_algebra_struct;
+-> concept_alphabet;
+-> concept_discrete_model;
+-> concept_signal;
+-> concept_final_input_alphabet;
+-> concept_final_output_alphabet;
+-> concept_math_abstraction;
+-> concept_functions;
+-> concept_final_state_machine;;
+
+sc_node_norole_relation
+-> nrel_alphabet;
+-> nrel_output_functions;
+-> nrel_output;
+-> nrel_transition_functions;
+-> nrel_input;;

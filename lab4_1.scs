@@ -1,0 +1,102 @@
+Lab_1=[*
+ABC
+<-concept_triangle;
+=>nrel_vertex: A; B; C;
+=>nrel_cathetus: AC; AB; BC;
+=>nrel_segment: AH; BE; AJ; JG; HG; BK;
+=>nrel_median: BK;
+=>nrel_orthic: AH;
+=>nrel_bisector: BE;;
+
+concept_point
+-> E; 
+-> J;
+-> K;
+-> H;
+-> G;;
+
+ABC=>nrel_inclusoin:concept_point;;
+
+concept_straight
+->straight_a;
+->straight_b;;
+
+straight_a
+=>nrel_inclusion:BK;
+->J;;
+
+straight_b
+=>nrel_inclusion:BE;
+->G;;
+
+rrel_boundary_point<-sc_node_role_relation;;
+
+HG
+<-x;
+->rrel_boundary_point:H; 
+->rrel_boundary_point:G;;
+
+JG
+<-x;
+->rrel_boundary_point:J; 
+->rrel_boundary_point:G;;
+
+AJ
+<-x;
+->rrel_boundary_point:A; 
+->rrel_boundary_point:J;;
+
+AC
+<-y;
+->A;
+->C;;
+
+AB
+<-4;
+->A;
+->B;;
+
+AH
+->H;
+->A;;
+
+BC
+->B;
+->C;;
+
+BK
+->B;
+->K;;
+
+BE
+->B;
+->E;;
+
+concept_lenght
+->x;
+->4;
+->y;;
+
+concept_number
+->y;
+->4;;
+
+concept_unknown_number->x;;
+concept_desired_value->y;;
+
+sc_node_norole_relation
+->nrel_vertex;
+->nrel_cathetus;
+->nrel_segment;
+->nrel_median;
+->nrel_orthic;
+->nrel_bisector;;
+
+sc_node_not_relation
+->concept_lenght;
+->concept_number;
+->concept_unknown_number;
+->concept_desired_value;
+->concept_point;
+->concept_straight;;
+*];;

@@ -1,0 +1,69 @@
+concept_ray -> AM
+(*
+    => nrel_inclusion: DM (*<- concept_segment;;*);;
+*);;
+
+DM => nrel_boundary_point: M (*<- concept_geometric_point;;*);;
+
+sc_node_not_binary_tuple -> ...
+(*
+    -> AM;;
+    -> some_line (*<- concept_line;;*);;
+    => nrel_intersection: ... (*-> M;;*);;
+*);;
+
+some_line
+-> C (* <- concept_geometric_point;;*);
+<=> nrel_parallel: BD;;
+
+concept_trapeziod -> trapeciodABCD
+(*
+    => nrel_diagonal: BD;;
+    => nrel_side: AD;;
+    => nrel_vertex:
+    C;
+    A (*<- concept_geometric_point;;*);;
+*);;
+
+concept_triangle -> triangleACM
+(*
+    => nrel_vertex:
+    A;
+    M;
+    C;;
+*);;
+
+exact_value -> ...
+(*
+    <- concept_area;;
+    -> trapeciodABCD;;
+*);;
+
+concept_statement_to_prove
+->
+[*
+    concept_area -> ... 
+    (*
+        <- sc_node_not_relation;;
+        <- exact_value;;
+        -> trapeciodABCD (*<- concept_trapeziod;;*);;
+        -> triangleACM (*<- concept_triangle;;*);;
+    *);;
+
+*];;
+
+sc_node_not_relation
+-> concept_line;
+-> concept_trapeziod;
+-> concept_segment;
+-> concept_triangle;
+-> concept_ray;
+-> concept_area;
+-> concept_geometric_point;;
+
+sc_node_norole_relation
+-> nrel_parallel;
+-> nrel_side;
+-> nrel_vertex;
+-> nrel_diagonal;
+-> nrel_boundary_point;;
